@@ -30,7 +30,7 @@ html {
 }
 
 html.loaded {
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, background-image 0.2s ease-in-out;
 }
 
 body {
@@ -137,5 +137,5 @@ a:hover {
 }
 
 #image {
-	padding-right: 1em;
+  padding-right: 1em;
 }
