@@ -34,9 +34,11 @@ function preloadImages() {
     const img = new Image();
     img.src = "../src/images/" + images[i];
   }
+  for (let i = 0; i < backgrounds.length; i++) {
+    const bg = new Image();
+    bg.src = "../src/bgs/" + backgrounds[i];
+  }
 }
-
-
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % images.length;
@@ -44,14 +46,13 @@ function nextImage() {
   const imageElement = document.getElementById("carouselImage");
   imageElement.style.opacity = 0;
   updateColors(currentIndex);
+  updateBackground(currentIndex);
 
   setTimeout(() => {
     imageElement.src = "../src/images/" + images[currentIndex];
     imageElement.style.opacity = 1;
   }, 200); // Match the transition duration in style.css
 }
-
-
 
 function updateColors() {
   const colorSet = colorSets[currentIndex];
@@ -61,6 +62,11 @@ function updateColors() {
   }
 }
 
+function updateBackground() {
+  document.documentElement.style.backgroundImage =
+    "url('../src/bgs/" + backgrounds[currentIndex] + "')";
+}
+
 // Set colors with current index first
 updateColors(currentIndex);
 
@@ -68,13 +74,15 @@ updateColors(currentIndex);
 document.getElementById("carouselImage").src =
   "../src/images/" + images[currentIndex];
 
+// Set the initial background
+updateBackground(currentIndex);
 
 // Image is opacity 0 and text is translated off screen by default
 // Add the loaded class to the image and text to animate them in
 window.onload = function () {
   document.getElementById("image").classList.add("loaded");
   document.getElementById("text").classList.add("loaded");
-	document.getElementsByTagName("html")[0].classList.add("loaded");
-  // Preload the remaining images
+  document.getElementsByTagName("html")[0].classList.add("loaded");
+  // Preload the remaining images and backgrounds
   preloadImages();
 };
