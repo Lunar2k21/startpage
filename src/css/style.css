@@ -1,10 +1,8 @@
 @font-face {
-  font-family: "SpaceMono Nerd Font";
-  font-display: swap;
-  src:
-    local("SpaceMono Nerd Font"),
-    url(../fonts/SpaceMonoNF.woff2) format("woff2"),
-    url(../fonts/SpaceMonoNF.woff) format("woff");
+  font-family: "FiraCode Nerd Font";
+  src: url("./fonts/FiraCodeNerdFont-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
@@ -37,8 +35,7 @@ body {
   display: flex;
   color: var(--text-color);
   font-family:
-    SpaceMono Nerd Font,
-    monospace;
+  "FiraCode Nerd Font", monospace;
   justify-content: center;
   align-items: center;
 }
