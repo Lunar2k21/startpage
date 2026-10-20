@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1e1e2e" />
+  <title>~/home</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23cba6f7' d='M8 1.5 1.5 7.2l1 1.1L3.5 7.5V14h3.5v-4h2v4h3.5V7.5l1 .8 1-1.1z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="src/css/home.css" />
+</head>
+<body>
+  <div class="backwall" id="backwall"></div>
+  <!-- ======== cozy ======== -->
+  <main class="cozy">
+    <section class="lcol" id="lcol"></section>
+    <div class="pcol"><figure class="polaroid"><div class="tape"></div><div class="media" id="mediaC"></div><figcaption id="cap"></figcaption></figure></div>
+    <section class="side" id="side">
+      <div class="clock" id="clockC"><div class="cookie cookie-clock"><span class="ct"></span></div><div><div class="t plain-t"></div><div class="g"></div></div></div>
+      <div class="search" id="searchC"><label><span class="sico"></span><input id="q" placeholder="What are we looking for?" autocomplete="off" spellcheck="false" /></label><div class="sp-results" id="results"></div></div>
+      <div class="shelves" id="shelves"></div>
+    </section>
+  </main>
+
+  <!-- ======== ambient ======== -->
+  <div class="ambient">
+    <div class="glow" id="glow"></div>
+    <div class="hero"><div class="media" id="mediaA"></div></div>
+    <div class="clock" id="clockA"><div class="cookie cookie-clock"><span class="ct"></span></div><div><div class="t plain-t"></div><div class="g"></div></div></div>
+    <aside class="aside l" id="asideL"></aside><aside class="aside r" id="asideR"></aside>
+    <nav class="dock" id="dock"></nav>
+  </div>
+
+  <div class="tools">
+    <button class="tbtn spr" id="prev" title="Previous picture (←)">‹</button>
+    <button class="tbtn spr" id="next" title="Next picture (→)">›</button>
+    <div style="position:relative">
+      <button class="tbtn spr" id="setBtn"><svg class="ico" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1a7 7 0 1 0 0 14c.8 0 1.3-.6 1.3-1.3 0-.4-.1-.7-.4-.9a1.3 1.3 0 0 1 1-2.2h1.5A3.6 3.6 0 0 0 15 7c0-3.3-3.1-6-7-6M4 8.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2m2-3a1 1 0 1 1 0-2 1 1 0 0 1 0 2m4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2m2 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>Look</button>
+      <div class="panel" id="panel">
+        <h4>Colours</h4>
+        <div class="seg" id="segPal"><button data-v="ctp">Catppuccin</button><button data-v="hybrid">Art accent</button><button data-v="blend">Warmed ★</button><button data-v="probe">Probed</button></div>
+        <p class="why" id="why"></p>
+        <div class="swatches" id="sw"></div>
+        <h4>Mode</h4>
+        <div class="seg" id="segMode"><button data-v="auto">Follow system</button><button data-v="dark">Dark</button><button data-v="light">Pastel</button></div>
+        <h4>Catppuccin flavour · fixed accent</h4>
+        <div class="seg" id="segFlavor"><button data-v="mocha">Mocha</button><button data-v="macchiato">Macchiato</button><button data-v="frappe">Frappé</button></div>
+        <div class="seg" id="segAcc"></div>
+        <h4>Frosted glass</h4>
+        <div class="seg" id="segGlass"><button data-v="off">Solid</button><button data-v="on">Glass</button></div>
+        <label class="slider"><span>Opacity</span><input type="range" id="ga" min="5" max="95" step="5"><span id="gaV"></span></label>
+        <label class="slider"><span>Blur</span><input type="range" id="gb" min="0" max="48" step="2"><span id="gbV"></span></label>
+        <label class="slider"><span>Backdrop</span><input type="range" id="wb" min="0" max="60" step="2"><span id="wbV"></span></label>
+        <h4>Layout · clock</h4>
+        <div class="seg" id="segLay"><button data-v="cozy">Cozy</button><button data-v="ambient">Ambient</button></div>
+        <div class="seg" id="segClock"><button data-v="plain">Plain clock</button><button data-v="cookie">Cookie clock</button></div>
+        <div class="seg" id="segSec"><button data-v="off">hh:mm</button><button data-v="on">with seconds</button></div>
+        <h4>Search · default engine (Tab cycles while typing)</h4>
+        <div class="seg" id="segEngine"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/js/config.js"></script>
+  <script src="src/js/search.js"></script>
+  <script src="src/images/wall/palettes.js"></script>
+  <script src="src/js/palette.js"></script>
+  <script src="src/js/home.js"></script>
+</body>
+</html>
